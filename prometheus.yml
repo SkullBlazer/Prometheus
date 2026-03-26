@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 5s
+  external_labels:
+    replica: 0
+    cluster: thanos-lab
+
+scrape_configs:
+
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - prometheus:9090

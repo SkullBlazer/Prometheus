@@ -27,7 +27,35 @@ services:
       - "9000:9000"
       - "9001:9001"
 
+  thanos-sidecar:
+    image: quay.io/thanos/thanos:v0.41.0
+    container_name: thanos-sidecar
+    user: "65534:65534"
+    depends_on:
+      - prometheus
+      - minio
+    volumes:
+      - ./objstore.yml:/etc/thanos/objstore.yml
+      - prometheus_data:/prometheus
+    command:
+      - sidecar
+      - --tsdb.path=/prometheus
+      - --prometheus.url=http://prometheus:9090
+      - --objstore.config-file=/etc/thanos/objstore.yml
+    ports:
+      - "10902:10902"
 
+  thanos-query:
+    image: quay.io/thanos/thanos:v0.41.0
+    container_name: thanos-query
+    depends_on:
+      - thanos-sidecar
+    command:
+      - query
+      - --http-address=0.0.0.0:10902
+      - --endpoint=thanos-sidecar:10901
+    ports:
+      - "10903:10902"
 
 volumes:
 
