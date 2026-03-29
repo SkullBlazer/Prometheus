@@ -1,0 +1,69 @@
+{
+  "generated_at_utc": "2026-03-28T14:42:28+00:00",
+  "left_file": "/home/avaneesh/thanos-lab/prom_only.json",
+  "right_file": "/home/avaneesh/thanos-lab/prom_thanos.json",
+  "left_mode": "prometheus-only",
+  "right_mode": "prometheus+thanos",
+  "comparison": {
+    "left_mode": "prometheus-only",
+    "right_mode": "prometheus+thanos",
+    "instant_query_comparison": {
+      "up": {
+        "left_prometheus_avg_ms": 0.602370200022051,
+        "right_prometheus_avg_ms": 0.3782480499921803,
+        "right_thanos_query_avg_ms": 0.8061141999633037,
+        "thanos_overhead_vs_right_prometheus_pct": 113.11787330561754,
+        "right_thanos_vs_left_prometheus_pct": 33.82371836020345
+      },
+      "ingest_rate": {
+        "left_prometheus_avg_ms": 0.6787872000131756,
+        "right_prometheus_avg_ms": 0.3460750999920492,
+        "right_thanos_query_avg_ms": 0.7257539500415078,
+        "thanos_overhead_vs_right_prometheus_pct": 109.70995892457485,
+        "right_thanos_vs_left_prometheus_pct": 6.919215628612402
+      },
+      "http_req_rate": {
+        "left_prometheus_avg_ms": 0.7429281999748127,
+        "right_prometheus_avg_ms": 0.47589779996997095,
+        "right_thanos_query_avg_ms": 1.4413601499882134,
+        "thanos_overhead_vs_right_prometheus_pct": 202.87178257162836,
+        "right_thanos_vs_left_prometheus_pct": 94.01069309754016
+      },
+      "scrape_duration_avg": {
+        "left_prometheus_avg_ms": 0.5635955500338241,
+        "right_prometheus_avg_ms": 0.46895715004211525,
+        "right_thanos_query_avg_ms": 0.6610867999825132,
+        "thanos_overhead_vs_right_prometheus_pct": 40.96955338523861,
+        "right_thanos_vs_left_prometheus_pct": 17.298087244095196
+      }
+    },
+    "load_test_comparison": {
+      "left_prometheus_qps": 4852.7,
+      "right_prometheus_qps": 4470.2,
+      "right_thanos_query_qps": 2613.95
+    },
+    "resource_comparison": {
+      "left_total_mem_mib": 48.339999198913574,
+      "right_total_mem_mib": 278.14999771118164,
+      "delta_mem_mib": 229.80999851226807
+    },
+    "interpretation": {
+      "prometheus_only_pros": [
+        "Lower memory footprint by about 229.81 MiB in this run.",
+        "Simpler deployment and fewer moving parts to operate."
+      ],
+      "prometheus_only_cons": [
+        "No dedicated global query layer for multi-cluster aggregation.",
+        "Local-only retention unless extra remote storage components are added."
+      ],
+      "thanos_stack_pros": [
+        "Provides an additional query layer that can aggregate across multiple Prometheus instances.",
+        "Can use object storage for long-term retention (if sidecar/store components are enabled)."
+      ],
+      "thanos_stack_cons": [
+        "Higher memory footprint by about 229.81 MiB in this run.",
+        "Higher operational complexity due to extra components and object storage integration."
+      ]
+    }
+  }
+}

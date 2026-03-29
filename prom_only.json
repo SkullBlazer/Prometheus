@@ -1,0 +1,258 @@
+{
+  "generated_at_utc": "2026-03-28T14:40:32+00:00",
+  "mode_detected": "prometheus-only",
+  "detection": {
+    "prometheus_url": "http://localhost:9090",
+    "prometheus_up": true,
+    "thanos_query_url": "http://localhost:10903",
+    "thanos_query_up": false
+  },
+  "config": {
+    "samples": 20,
+    "warmup": 3,
+    "timeout_seconds": 5.0,
+    "range_repeats": 5,
+    "range_lookback_minutes": 15,
+    "range_step_seconds": 15,
+    "load_concurrency": 8,
+    "load_duration_seconds": 20
+  },
+  "endpoints": {
+    "prometheus": {
+      "name": "prometheus",
+      "base_url": "http://localhost:9090",
+      "alive": true,
+      "instant_queries": {
+        "up": {
+          "requested": 20,
+          "successful": 20,
+          "failed": 0,
+          "success_rate_pct": 100.0,
+          "latency_ms_success": {
+            "count": 20,
+            "min": 0.5087710001134838,
+            "avg": 0.602370200022051,
+            "p50": 0.5883984999854874,
+            "p95": 0.6959598002822532,
+            "max": 0.7658570002604392,
+            "stdev": 0.06117468951109634
+          },
+          "latency_ms_all": {
+            "count": 20,
+            "min": 0.5087710001134838,
+            "avg": 0.602370200022051,
+            "p50": 0.5883984999854874,
+            "p95": 0.6959598002822532,
+            "max": 0.7658570002604392,
+            "stdev": 0.06117468951109634
+          },
+          "result_count": {
+            "count": 20,
+            "min": 1.0,
+            "avg": 1.0,
+            "p50": 1.0,
+            "p95": 1.0,
+            "max": 1.0,
+            "stdev": 0.0
+          },
+          "sample_errors": []
+        },
+        "ingest_rate": {
+          "requested": 20,
+          "successful": 20,
+          "failed": 0,
+          "success_rate_pct": 100.0,
+          "latency_ms_success": {
+            "count": 20,
+            "min": 0.6134740001471073,
+            "avg": 0.6787872000131756,
+            "p50": 0.6775180002023262,
+            "p95": 0.7253359500055012,
+            "max": 0.8536989998901845,
+            "stdev": 0.050792839998419485
+          },
+          "latency_ms_all": {
+            "count": 20,
+            "min": 0.6134740001471073,
+            "avg": 0.6787872000131756,
+            "p50": 0.6775180002023262,
+            "p95": 0.7253359500055012,
+            "max": 0.8536989998901845,
+            "stdev": 0.050792839998419485
+          },
+          "result_count": {
+            "count": 20,
+            "min": 2.0,
+            "avg": 2.0,
+            "p50": 2.0,
+            "p95": 2.0,
+            "max": 2.0,
+            "stdev": 0.0
+          },
+          "sample_errors": []
+        },
+        "http_req_rate": {
+          "requested": 20,
+          "successful": 20,
+          "failed": 0,
+          "success_rate_pct": 100.0,
+          "latency_ms_success": {
+            "count": 20,
+            "min": 0.6417469999178138,
+            "avg": 0.7429281999748127,
+            "p50": 0.7044730000416166,
+            "p95": 0.8278964502096646,
+            "max": 1.4591989997825294,
+            "stdev": 0.17096251776394944
+          },
+          "latency_ms_all": {
+            "count": 20,
+            "min": 0.6417469999178138,
+            "avg": 0.7429281999748127,
+            "p50": 0.7044730000416166,
+            "p95": 0.8278964502096646,
+            "max": 1.4591989997825294,
+            "stdev": 0.17096251776394944
+          },
+          "result_count": {
+            "count": 20,
+            "min": 1.0,
+            "avg": 1.0,
+            "p50": 1.0,
+            "p95": 1.0,
+            "max": 1.0,
+            "stdev": 0.0
+          },
+          "sample_errors": []
+        },
+        "scrape_duration_avg": {
+          "requested": 20,
+          "successful": 20,
+          "failed": 0,
+          "success_rate_pct": 100.0,
+          "latency_ms_success": {
+            "count": 20,
+            "min": 0.5050740001024678,
+            "avg": 0.5635955500338241,
+            "p50": 0.5567799998971168,
+            "p95": 0.6595016999654035,
+            "max": 0.6766719998267945,
+            "stdev": 0.04867144215811295
+          },
+          "latency_ms_all": {
+            "count": 20,
+            "min": 0.5050740001024678,
+            "avg": 0.5635955500338241,
+            "p50": 0.5567799998971168,
+            "p95": 0.6595016999654035,
+            "max": 0.6766719998267945,
+            "stdev": 0.04867144215811295
+          },
+          "result_count": {
+            "count": 20,
+            "min": 1.0,
+            "avg": 1.0,
+            "p50": 1.0,
+            "p95": 1.0,
+            "max": 1.0,
+            "stdev": 0.0
+          },
+          "sample_errors": []
+        }
+      },
+      "range_query": {
+        "requested": 5,
+        "successful": 5,
+        "failed": 0,
+        "success_rate_pct": 100.0,
+        "latency_ms_success": {
+          "count": 5,
+          "min": 0.5358809999052028,
+          "avg": 0.5859099998815509,
+          "p50": 0.5678309998984332,
+          "p95": 0.6515071999274369,
+          "max": 0.6622949999837147,
+          "stdev": 0.04497142415877075
+        },
+        "latency_ms_all": {
+          "count": 5,
+          "min": 0.5358809999052028,
+          "avg": 0.5859099998815509,
+          "p50": 0.5678309998984332,
+          "p95": 0.6515071999274369,
+          "max": 0.6622949999837147,
+          "stdev": 0.04497142415877075
+        },
+        "returned_points": {
+          "count": 5,
+          "min": 43.0,
+          "avg": 43.0,
+          "p50": 43.0,
+          "p95": 43.0,
+          "max": 43.0,
+          "stdev": 0.0
+        },
+        "lookback_minutes": 15,
+        "step_seconds": 15,
+        "sample_errors": []
+      },
+      "load_test": {
+        "duration_seconds": 20,
+        "concurrency": 8,
+        "total_requests": 97054,
+        "successful": 97054,
+        "failed": 0,
+        "success_rate_pct": 100.0,
+        "throughput_req_per_sec": 4852.7,
+        "latency_ms_success": {
+          "count": 97054,
+          "min": 0.4478190003283089,
+          "avg": 1.6467079944668488,
+          "p50": 1.5882694999618252,
+          "p95": 2.4711108000019513,
+          "max": 22.75799900007769,
+          "stdev": 0.5012491237578045
+        },
+        "latency_ms_all": {
+          "count": 97054,
+          "min": 0.4478190003283089,
+          "avg": 1.6467079944668488,
+          "p50": 1.5882694999618252,
+          "p95": 2.4711108000019513,
+          "max": 22.75799900007769,
+          "stdev": 0.5012491237578045
+        },
+        "sample_errors": []
+      },
+      "targets": {
+        "total_active_targets": 1,
+        "healthy_targets": 1,
+        "unhealthy_targets": 0
+      }
+    }
+  },
+  "docker_stats": {
+    "available": true,
+    "error": null,
+    "containers": {
+      "prometheus": {
+        "cpu_percent": 0.58,
+        "mem_percent": 0.15,
+        "mem_usage_raw": "48.34MiB / 30.56GiB",
+        "mem_used_bytes": 50688163,
+        "mem_used_mib": 48.339999198913574,
+        "net_io": "45.9MB / 65.2MB",
+        "block_io": "1.04MB / 369kB",
+        "pids": "30"
+      }
+    },
+    "totals": {
+      "containers_count": 1,
+      "total_mem_used_bytes": 50688163,
+      "total_mem_used_mib": 48.339999198913574
+    }
+  },
+  "derived": {
+    "thanos_overhead": {}
+  }
+}
